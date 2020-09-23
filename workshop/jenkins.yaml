@@ -1,0 +1,204 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - gitLabApiTokenImpl:
+          apiToken: "{AQAAABAAAAAg/6j4/jo/QdfWEGBwHy8v0Hfzd9RDTmn2NF64TM7ckAv9NOoJGAVDAnq8rD/aEcZf}"
+          description: "GitLab Token"
+          id: "gitlab_token"
+          scope: GLOBAL
+      - basicSSHUserPrivateKey:
+          description: "Gitlab to Jenkins SSH Key"
+          id: "gitlab_jenkins"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: GLOBAL
+          username: "git"
+      - string:
+          description: "SonarQube Server Authentication Token"
+          id: "sonarqubetoken"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAwNWsDbJwMMpsM64Nsd2Dv2PHq2aXtk7A3MqNaQ89trMswoXCflmrmhKaMbz/VOpaYXbgm6jxl4cDd7+P4gtQfSQ==}"
+      - usernamePassword:
+          description: "Private Docker Registry"
+          id: "registry-auth"
+          password: "{AQAAABAAAAAQPAWK9+7TpalC0e1Sh9UAYJoFwZKaQRa3/72ztBZoTd4=}"
+          scope: GLOBAL
+          username: "devsecops"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelAtoms:
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "devsecops"
+        name: "DevSecOps"
+        properties:
+        - "apiToken"
+        - favoriting:
+            autofavoriteEnabled: true
+        - mailer:
+            emailAddress: "devsecops@example.com"
+        - "favorite"
+        - preferredProvider:
+            providerId: "default"
+        - timezone:
+            timeZoneName: "Europe/Berlin"
+  slaveAgentPort: 50000
+  systemMessage: |+
+    Jenkins configured automatically by Jenkins Configuration as Code plugin
+
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  anchore:
+    debug: false
+    enginepass: "{AQAAABAAAAAQ7DAcA1R2EkH0qGMLKN+e7I7Xht9yl+hWhMztnbq59oM=}"
+    engineurl: "http://your_anchore_engine_host_ip:your_anchore_engine_port/v1"
+    engineverify: false
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  dependencyTrackPublisher:
+    dependencyTrackAutoCreateProjects: false
+    dependencyTrackPollingTimeout: 5
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://jenkins:8080/github-webhook/"
+  gitLabConnectionConfig:
+    connections:
+    - apiTokenId: "gitlab_token"
+      clientBuilderId: "autodetect"
+      connectionTimeout: 20
+      ignoreCertificateErrors: true
+      name: "my_gitlab_server"
+      readTimeout: 10
+      url: "https://gitlab"
+  gitSCM:
+    createAccountBasedOnEmail: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://jenkins:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  pipeline-model-docker:
+    registry:
+      credentialsId: "registry-auth"
+      url: "http://registry:5000/v2/"
+  pollSCM:
+    pollingThreadCount: 10
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: true
+    installations:
+    - credentialsId: "sonarqubetoken"
+      name: "Sonarqube Server"
+      serverUrl: "http://sonarqube:9000/"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
+  sshPublisher:
+    commonConfig:
+      disableAllExec: false
+      encryptedPassphrase: "{AQAAABAAAAAQA/s7L9N0CzQJjz4cgBMzInP4kkmeuk9VDILAtwtZ1iE=}"
+  timestamperConfig:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  dependency-check:
+    installations:
+    - name: "Dependency-Check"
+      properties:
+      - installSource:
+          installers:
+          - dependencyCheckInstaller:
+              id: "5.3.2"
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - name: "jdk11"
+      properties:
+      - installSource:
+          installers:
+          - zip:
+              subdir: "jdk-11.0.1"
+              url: "https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz"
+  sonarRunnerInstallation:
+    installations:
+    - home: "/var/jenkins_home/sonar-scanner-4.3.0.2102-linux"
+      name: "SonarQube Scanner"

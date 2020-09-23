@@ -1,0 +1,80 @@
+node() {
+    def app
+
+    stage('Cleanup Jenkins workspace') { 
+        deleteDir()
+    }
+
+    gitlabBuilds(builds: ["Copy Commit artifacts", "Secret Analysis", "Build Docker Image", "Push docker image", "Run docker", "Sonarqube scan", "Dependeny Check", "Trivy Scan"]) {
+    
+        stage("Copy Commit artifacts") {
+            gitlabCommitStatus("Copy Commit artifacts") {
+                checkout scm 
+                sh 'git log -2 --format="%H" | tail -n1 > commit'
+                archiveArtifacts artifacts: 'commit'
+                copyArtifacts(projectName: 'juiceshop-pipeline', selector: lastCompleted(), filter: 'commit' , target: './' ) 
+            }
+        }
+
+        stage ("Secret Analysis") {
+            gitlabCommitStatus("Secret Analysis") {
+                def commit = readFile('commit').trim()
+                println(commit)
+                sh 'rm trufflehog.txt || true'
+                sh 'docker run --rm -v `pwd`:/proj dxa4481/trufflehog --regex --entropy=true --since_commit ${commit}  --repo_path /home/ubuntu/jenkins/workspace/juiceshop-pipeline . > trufflehog.txt || true '
+            }
+        }
+
+        stage("Sonarqube scan") {
+		    gitlabCommitStatus("Sonarqube scan") {
+			    withSonarQubeEnv('Sonarqube Server') {
+			        sh "${tool ('SonarQube Scanner')}/bin/sonar-scanner \
+						-Dsonar.projectKey=juiceshop-pipeline \
+						-Dsonar.sources=. \
+						-Dsonar.host.url=http://sonarqube:9000 \
+						-Dsonar.login=admin \
+						-Dsonar.password=admin"
+			    }
+		    }
+        }
+	
+	    stage("Build Docker Image") {
+	        gitlabCommitStatus("Build Docker Image") {
+                app = docker.build("devsecops/juiceshop")
+            }
+        }
+    
+        stage("Dependency Check") {
+		    gitlabCommitStatus("Dependeny Check") {
+			    app.inside {
+				    dependencyCheck additionalArguments: '--format JSON --format XML', odcInstallation: 'Dependency-Check'
+				    dependencyCheckPublisher pattern: ''
+			    }
+		    }
+        }
+
+        stage("Trivy Scan") {
+	        gitlabCommitStatus("Trivy Scan") {
+	            sh 'docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/devsecops/docker/trivy:/root/.cache/ aquasec/trivy -f json -o /root/.cache/trivy/results/trivy_results.json devsecops/juiceshop'
+	            sh 'echo "Trivy Scan completed"'
+            }
+        }
+
+	    stage("Push docker image") {
+		    gitlabCommitStatus("Publish docker image") {
+			    docker.withRegistry('http://registry:5000', 'registry-auth') {
+				    app.push("${env.BUILD_NUMBER}")
+				    app.push("latest")
+			    }
+			    sh 'echo "Docker push completed"'
+		    }
+	    }
+
+	    stage("Run docker") {
+	        gitlabCommitStatus("Run docker") {
+        	    sh 'docker run --rm -d -p 3000:3000 devsecops/juiceshop'
+        	    sh 'echo "Docker push completed"'
+            }
+	    }
+    }
+}
