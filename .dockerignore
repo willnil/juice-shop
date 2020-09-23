@@ -1,0 +1,13 @@
+.git/
+node_modules/
+screenshots/
+test/
+build/
+dist/
+vagrant/
+docs/
+Dockerfile
+
+# Pattern is *not covered* by node_modules/ above no matter what IntelliJ says!
+frontend/node_modules/
+frontend/dist/

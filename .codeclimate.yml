@@ -1,0 +1,32 @@
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+    - '**.ts'
+    - '**.js'
+    - '**.css'
+    - '**.scss'
+checks:
+  file-lines:
+    config:
+      threshold: 300
+  method-lines:
+    config:
+      threshold: 30
+  method-complexity:
+    config:
+      threshold: 7
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: false
+exclude_paths:
+  - 'data/datacreator.js'
+  - 'frontend/src/assets/private/**/*'
+  - 'Gruntfile.js'
+  - '**/*conf.js'

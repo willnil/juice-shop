@@ -1,0 +1,8 @@
+application:
+  showChallengeSolvedNotifications: false
+  showChallengeHints: false
+  showGitHubLinks: false
+  welcomeBanner:
+    showOnFirstStart: false
+hackingInstructor:
+  isEnabled: false

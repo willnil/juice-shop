@@ -1,0 +1,12 @@
+application:
+  logo: JuiceShopCTF_Logo.png
+  favicon: favicon_ctf.ico
+  showChallengeHints: false
+  showVersionNumber: false
+  showGitHubLinks: false
+  welcomeBanner:
+    showOnFirstStart: false
+hackingInstructor:
+  isEnabled: false
+ctf:
+  showFlagsInNotifications: true
